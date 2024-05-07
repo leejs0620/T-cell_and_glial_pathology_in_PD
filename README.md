@@ -27,7 +27,7 @@ TensorFlow: 1.15.4
 ```
 You can build the environment with Anaconda(or miniconda):
 ```bash
-$ conda create -n ssc python==3.6.13
+$ conda create -n scc python==3.6.13
 $ conda activate scc
 (scc) $ pip install -r requirements.txt
 ```
