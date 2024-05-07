@@ -16,9 +16,9 @@ Python: 3.6.13
 Numpy: 1.18.5
 Pandas: 1.1.5
 ```
-Optional requirements for GPU accelerated computing
-
 [The GPU-accelerated computing module is currently not shareable. We aim to upload it as soon as possible.]
+
+Optional requirements for GPU accelerated computing
 
 -- Please ensure that your installation(NVIDIA driver, CUDA) is appropriate for your hardware and check if the GPUs are available.
 ```bash
@@ -85,7 +85,7 @@ sample_data/
 ```
 ## Data Directory - output
 
-- The folder for each sample has distributed outputs and finally concatenated output are
+- Each sample's folder contains distributed computation outputs, which will eventually be concatenated and saved in the designated output path.
 
 ```bash
 
@@ -106,7 +106,7 @@ sample_data/
     		├── Sample_C_1_1.csv
                 ├── Sample_C_1_2.csv
     		└── ...
-	├── Sample_A_1.csv
-        ├── Sample_B_1.csv
-        └── Sample_C_1.csv
+	├── Sample_A_1.csv --> (final output for Sample_A)
+        ├── Sample_B_1.csv --> (final output for Sample_B)
+        └── Sample_C_1.csv --> (final output for Sample_C)
 ```
