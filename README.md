@@ -44,12 +44,12 @@ Parameter
 ## Data Directory - input
 - All matrices for input should be
 
-| SYMBOL | Cell 1 | Cell 2 |  ... |Cell n|
+|  | AGTGTGGTCTATTGTG-1 | GCTATCGCGGCGCAAC-1 |  ... |Barcode n|
 | :----:| :----: | :----: |  :----: | :----: | 
-|Gene 1|0|2|...|0|  
-|Gene 2|0|0|...|1|
+|AGTGTGGTCTATTGTG-1|0|2|...|0|  
+|AGTGTGGTCTATTGTG-1|0|0|...|1|
 |...|...|...|...|...|
-|Gene n|0|0|...|0|
+|Barcode n|0|0|...|0|
 
   
 - Each sample should have matching names for both the enrichment matrices and adjacency matrices.
