@@ -4,12 +4,12 @@ Code and data for The spatial landscape of glial pathology and adaptive immune r
 # Spatial cross-correlation
 This is a Python module for spatial cross-correlation analyses
 
-# Installation
+## Installation
 ```bash
 $ git clone https://github.com/dalhoomist/T-cell_and_glial_pathology_in_PD.git
 ```
 
-# Set up Environment
+## Set up Environment
 Requirement
 ```bash
 Python: 3.6.13
@@ -30,7 +30,7 @@ $ conda activate scc
 (scc) $ pip install -r requirements.txt
 ```
 
-# Usage(sample data)
+## Usage(sample data)
 
 ```bash
 (scc) $ python scc.py --n 5 --input sample_data/ --output sample_data/out/ --order 1
@@ -41,7 +41,8 @@ Parameter
 - [--output]: Directory for output
 - [--order]: The order of adjacency matrices
 
-# Data Directory
+## Data Directory - input
+- All matrices for input should be 
 - Each sample should have matching names for both the enrichment matrices and adjacency matrices.
 - You can set the path for the input folder, but ensure that all enrichment matrices are located within the 'enrich' folder.
 - The folder containing adjacency matrices should follow the format 'adj_1', 'adj_3', etc., where the latter number indicates the order.
@@ -62,6 +63,10 @@ sample_data/
     		└── ...
 	└── out
 ```
+## Data Directory - output
+
+- The folder for each sample has distributed outputs and finally concatenated output are
+
 ```bash
 
 
