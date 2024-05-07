@@ -6,6 +6,6 @@ This is a Python module for spatial cross-correlation analyses
 
 # Installation
 ```bash
-git clone https://github.com/dalhoomist/T-cell_and_glial_pathology_in_PD.git
+$ git clone https://github.com/dalhoomist/T-cell_and_glial_pathology_in_PD.git
 ```
 
