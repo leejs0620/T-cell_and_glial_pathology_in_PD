@@ -42,14 +42,23 @@ Parameter
 - [--order]: The order of adjacency matrices
 
 ## Data Directory - input
-- All matrices for input should be
+- Adjacency matrices for input should be
 
 |  | AGTGTGGTCTATTGTG-1 | GCTATCGCGGCGCAAC-1 |  ... |Barcode n|
 | :----:| :----: | :----: |  :----: | :----: | 
-|AGTGTGGTCTATTGTG-1|0|2|...|0|  
+|AGTGTGGTCTATTGTG-1|0|1|...|0|  
 |AGTGTGGTCTATTGTG-1|0|0|...|1|
 |...|...|...|...|...|
 |Barcode n|0|0|...|0|
+
+- Enrichment matrices for input should be
+
+|  | AGTGTGGTCTATTGTG-1 | GCTATCGCGGCGCAAC-1 |  ... |Barcode n|
+| :----:| :----: | :----: |  :----: | :----: | 
+|Type_A|0.01306|0.00010|...|0.00022|  
+|Type_B|0.33542|0.48310|...|0.07694|
+|...|...|...|...|...|
+|Type_n|0.05631|0.06172|...|0.04630|
 
   
 - Each sample should have matching names for both the enrichment matrices and adjacency matrices.
