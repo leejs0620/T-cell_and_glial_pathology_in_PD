@@ -50,14 +50,23 @@ def param_args():
     args = parser.parse_args()
     return args
 
-def ssc_cpu():
-    print("======= START =======")
+def ssc_cpu(num_processes,num):
     for a in list(range(len(sample_name))):
-        df = pd.read_csv(args.input +'enrich/' + sample_name[a] + '.csv')
+        df = pd.read_csv(args.input + 'enrich/' + sample_name[a] + '.csv')
     #         adj = np.asmatrix(pd.read_csv('csv/adj_' + l + '/' + st_gsea_all_go_names[a] + '.csv'))
-        adj = np.asmatrix((pd.read_csv(args.input +'adj_' + str(l) + '/' + sample_name[a] + '.csv')).drop(columns="Unnamed: 0").values)
+        adj_csv = pd.read_csv(args.input + 'adj_' + str(l) + '/' + sample_name[a] + '.csv')
+        adj = np.asmatrix((adj_csv).drop(columns="Unnamed: 0").values)
     #             print("Sample name is: " + st_gsea_all_go.names[a])
     #             print("Adjacency matrix: " + order_01_trimmed_adj_matrices_list.names[b])
+        
+        if len(df.columns.values.tolist()) != len(adj_csv.columns.values.tolist()):
+            raise NotImplementedError("Error: Length not same!")
+            break
+        for i in list(range(len(df.columns.values.tolist()))):
+            if df.columns.values.tolist()[i] != adj_csv.columns.values.tolist()[i]:
+                raise NotImplementedError("Error: Barcode not same!")
+                break
+        
         pathways_name = list(np.concatenate(df[["Unnamed: 0"]].values.tolist()))
         pathways = np.asmatrix(df.drop(columns="Unnamed: 0").values)
         pl = len(pathways)
@@ -65,10 +74,33 @@ def ssc_cpu():
         p_val = []
 #         n=1
 #         para = [row[i * n:(i + 1) * n] for i in range((len(row) + n - 1) // n )]
-        for i in row:
+        
+        num_groups = num_processes
+
+        # Remove brackets and split elements
+        elements = row
+
+        # Calculate length of each group
+        group_length = len(elements) // num_groups
+        remainder = len(elements) % num_groups  # Calculate remainder
+
+        # Initialize the starting index
+        start_index = 0
+
+        # Split into groups
+        result = []
+        for i in range(num_groups):
+            # Calculate the end index for the current group
+            end_index = start_index + group_length + (1 if i < remainder else 0)
+            # Add the sublist to the result
+            result.append(elements[start_index:end_index])
+            # Update the starting index for the next group
+            start_index = end_index
+
+        for i in result[num]:
             try:
-                df_tmp = pd.read_csv(str(l) + '/' + sample_name[a] + '_' + str(l) + '.csv')
-                if len(df_tmp) == pow(len(df),2):
+                df_tmp = pd.read_csv(args.output + str(l) + '/' + sample_name[a] + '_' + str(l) + '/' + sample_name[a] + '_' + str(l) + '_' +str(i) + '.csv')
+                if len(df_tmp) == pow(len(df),1):
                     pass
                 else:
                     for j in list(range(pl)):
@@ -140,17 +172,17 @@ def ssc_cpu():
                             gc.collect()
     #                         tf.keras.backend.clear_session()
 
-                            path = args.output + str(l)
+                            path = args.output + str(l) + '/' + sample_name[a] + '_' + str(l) 
                             isExist = os.path.exists(path)
                             if not isExist:
                                 os.makedirs(path)
-                            if i == 0 and j == 0:
+                            if j == 0:
                                 df2 = 0
                                 df2 = pd.DataFrame({"combo_name":[combo_name],'local_scc':[local_scc_list], 'global_scc':[global_scc], 'permutation':[compare],'p_val':[p_val]})
-                                df2.to_csv(path + '/' + sample_name[a] + '_' + str(l) + '.csv',index = None)
+                                df2.to_csv(path + '/' + sample_name[a] + '_' + str(l) + '_' +str(i) + '.csv',index = None)
                             else:
                                 df_tmp.loc[len(df_tmp.index)] = [combo_name, local_scc_list, global_scc, compare, p_val]
-                                df_tmp.to_csv(path + '/' + sample_name[a] + "_" + str(l) + '.csv',index = None)
+                                df_tmp.to_csv(path + '/' + sample_name[a] + "_" + str(l) + '_' +str(i) + '.csv',index = None)
                             end = time.time()
                             elapsed = (end - start)
                             print(elapsed)
@@ -230,22 +262,22 @@ def ssc_cpu():
                     gc.collect()
     #                 tf.keras.backend.clear_session()
 
-                    path = args.output + str(l)
+                    path = args.output + str(l) + '/' + sample_name[a] + '_' + str(l) 
                     isExist = os.path.exists(path)
                     if not isExist:
                         os.makedirs(path)
-                    if i == 0 and j == 0:
+                    if j == 0:
                         df2 = 0
                         df2 = pd.DataFrame({"combo_name":[combo_name],'local_scc':[local_scc_list], 'global_scc':[global_scc], 'permutation':[compare],'p_val':[p_val]})
-                        df2.to_csv(path + '/' + sample_name[a] + "_" + str(l) + '.csv',index = None)
+                        df2.to_csv(path + '/' + sample_name[a] + "_" + str(l) + '_' +str(i) + '.csv',index = None)
                     else:
                         df2.loc[len(df2.index)] = [combo_name, local_scc_list, global_scc, compare, p_val]
-                        df2.to_csv(path + '/' + sample_name[a] + "_" + str(l) + '.csv',index = None)
+                        df2.to_csv(path + '/' + sample_name[a] + "_" + str(l) + '_' +str(i) + '.csv',index = None)
 
                     end = time.time()
                     elapsed = (end - start)
                     print(elapsed)
-
+                 
 parser = argparse.ArgumentParser(description='')
 args = param_args()
 
@@ -253,15 +285,27 @@ sample_name = os.listdir(args.input + 'enrich/')
 sample_name = [sn.split('.csv', 1)[0] for sn in sample_name]
 l = args.order
 num_processes = args.n
+df = pd.read_csv(args.input + 'enrich/' + sample_name[0] + '.csv')
+if len(df) < num_processes:
+    num_processes = len(df)
 processes = []
 print(sample_name)
 
+
 # Start multiple processes
-for _ in range(num_processes):
-    process = multiprocessing.Process(target=ssc_cpu)
+for num in range(num_processes):
+    process = multiprocessing.Process(target=ssc_cpu,args=(num_processes,num))
     process.start()
     processes.append(process)
 
 # Wait for all processes to finish
 for process in processes:
     process.join()
+
+for a in list(range(len(sample_name))):
+    df_01 = pd.read_csv(args.output + str(l) + '/' + sample_name[a] + "_" + str(l) + '/' + sample_name[a] + "_" + str(l) + '_' +str(0) + '.csv')
+    for i in range(1,len(df)):
+        df_02 = pd.read_csv(args.output + str(l) + '/' + sample_name[a] + "_" + str(l) + '/' + sample_name[a] + "_" + str(l) + '_' +str(i) + '.csv')
+        df_01 = pd.concat([df_01,df_02])
+    df_01.to_csv(args.output + str(l) + '/' + sample_name[a] + "_" + str(l) + '.csv',index = None)
+
