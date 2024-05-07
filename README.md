@@ -17,7 +17,9 @@ Numpy: 1.18.5
 Pandas: 1.1.5
 ```
 Optional requirements for GPU accelerated computing
+
 [The GPU-accelerated computing module is currently not shareable. We aim to upload it as soon as possible.]
+
 -- Please ensure that your installation(NVIDIA driver, CUDA) is appropriate for your hardware and check if the GPUs are available.
 ```bash
 CUDA: 11.1
