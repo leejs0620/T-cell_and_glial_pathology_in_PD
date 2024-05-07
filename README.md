@@ -42,7 +42,16 @@ Parameter
 - [--order]: The order of adjacency matrices
 
 ## Data Directory - input
-- All matrices for input should be 
+- All matrices for input should be
+
+| SYMBOL | Cell 1 | Cell 2 |  ... |Cell n|
+| :----:| :----: | :----: |  :----: | :----: | 
+|Gene 1|0|2|...|0|  
+|Gene 2|0|0|...|1|
+|...|...|...|...|...|
+|Gene n|0|0|...|0|
+
+  
 - Each sample should have matching names for both the enrichment matrices and adjacency matrices.
 - You can set the path for the input folder, but ensure that all enrichment matrices are located within the 'enrich' folder.
 - The folder containing adjacency matrices should follow the format 'adj_1', 'adj_3', etc., where the latter number indicates the order.
