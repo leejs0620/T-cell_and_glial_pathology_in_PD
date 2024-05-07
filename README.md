@@ -18,7 +18,7 @@ Pandas: 1.1.5
 ```
 Optional requirements for GPU accelerated computing
 
--- Please make sure that your installation(NVIDIA driver, CUDA) is appropriate for your hardware and check if you have a GPU available.
+-- Please ensure that your installation(NVIDIA driver, CUDA) is appropriate for your hardware and check if the GPUs are available.
 ```bash
 CUDA: 11.1
 TensorFlow: 1.15.4
