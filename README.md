@@ -42,6 +42,7 @@ Parameter
 - [--order]: The order of adjacency matrices
 
 # Data Directory
+```bash
 sample_data/
 	├── enrich
     		├── Sample_A.csv
@@ -76,3 +77,4 @@ sample_data/
 	├── Sample_A_1.csv
   ├── Sample_B_1.csv
   └── Sample_C_1.csv
+```
