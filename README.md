@@ -17,7 +17,7 @@ Numpy: 1.18.5
 Pandas: 1.1.5
 ```
 Optional requirements for GPU accelerated computing
-
+[The GPU-accelerated computing module is currently not shareable. We aim to upload it as soon as possible.]
 -- Please ensure that your installation(NVIDIA driver, CUDA) is appropriate for your hardware and check if the GPUs are available.
 ```bash
 CUDA: 11.1
@@ -36,7 +36,7 @@ $ conda activate scc
 (scc) $ python scc.py --n 5 --input sample_data/ --output sample_data/out/ --order 1
 ```
 Parameter
-- [--n]: The number of multi-processing
+- [--n]: The number of CPU cores.
 - [--input]: Directory for both the enrichment matrices and adjacency matrices.
 - [--output]: Directory for output
 - [--order]: The order of adjacency matrices
