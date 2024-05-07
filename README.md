@@ -30,3 +30,10 @@ $ conda activate scc
 (scc) $ pip install -r requirements.txt
 ```
 
+# Usage
+
+
+
+```bash
+(scc) $ python scc.py --n 5 --input sample_data/ --output sample_data/out/ --order 1
+```
