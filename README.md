@@ -4,18 +4,28 @@ Code and data for The spatial landscape of glial pathology and adaptive immune r
 # Spatial cross-correlation
 This is a Python module for spatial cross-correlation analyses
 
+# Installation
+```bash
+$ git clone https://github.com/dalhoomist/T-cell_and_glial_pathology_in_PD.git
+```
+
 # Set up Environment
+Requirements
 ```bash
 Python: 3.6.13
 Numpy: 1.18.5
 Pandas: 1.1.5
--------------------
+```
+Optional requirements for GPU accelerated computing
+-- Please ensure that your installation(NVIDIA driver, CUDA) is appropriate for your hardware and check if you have a GPU available.
+```bash
 CUDA: 11.1
 TensorFlow: 1.15.4
 ```
-
-# Installation
+You can build the environment with Anaconda(or miniconda):
 ```bash
-$ git clone https://github.com/dalhoomist/T-cell_and_glial_pathology_in_PD.git
+$ conda create -n ssc python==3.6.13
+$ conda activate scc
+(scc) $ pip install -r requirements.txt
 ```
 
