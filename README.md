@@ -30,7 +30,7 @@ $ conda activate scc
 (scc) $ pip install -r requirements.txt
 ```
 
-## Usage(sample data)
+## Usage - sample data
 
 ```bash
 (scc) $ python scc.py --n 5 --input sample_data/ --output sample_data/out/ --order 1
@@ -41,7 +41,7 @@ Parameter
 - [--output]: Directory for output
 - [--order]: The order of adjacency matrices
 
-## Data Directory - input
+## Data Format - input
 - Adjacency matrices for input should be
 
 |  | AGTGTGGTCTATTGTG-1 | GCTATCGCGGCGCAAC-1 |  ... |Barcode n|
@@ -60,7 +60,7 @@ Parameter
 |...|...|...|...|...|
 |Type_n|0.05631|0.06172|...|0.04630|
 
-  
+## Data Directory - input
 - Each sample should have matching names for both the enrichment matrices and adjacency matrices.
 - You can set the path for the input folder, but ensure that all enrichment matrices are located within the 'enrich' folder.
 - The folder containing adjacency matrices should follow the format 'adj_1', 'adj_3', etc., where the latter number indicates the order.
