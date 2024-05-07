@@ -37,11 +37,15 @@ $ conda activate scc
 ```
 Parameter
 - [--n]: The number of multi-processing
-- [--input]: Directory for input matrices
+- [--input]: Directory for both the enrichment matrices and adjacency matrices.
 - [--output]: Directory for output
 - [--order]: The order of adjacency matrices
 
 # Data Directory
+- Each sample should have matching names for both the enrichment matrices and adjacency matrices.
+- You can set the path for the input folder, but ensure that all enrichment matrices are located within the 'enrich' folder.
+- The folder containing adjacency matrices should follow the format 'adj_1', 'adj_3', etc., where the latter number indicates the order.
+
 ```bash
 sample_data/
 	├── enrich
@@ -52,11 +56,14 @@ sample_data/
     		├── Sample_A.csv
     		├── Sample_B.csv
     		└── ...
-	├── adj2
+	├── adj_2
     		├── Sample_A.csv
     		├── Sample_B.csv
     		└── ...
 	└── out
+```
+```bash
+
 
  sample_data/out/
 	├── Sample_A_1
@@ -67,14 +74,14 @@ sample_data/
 	├── Sample_B_1
     		├── Sample_B_1_0.csv
     		├── Sample_B_1_1.csv
-        ├── Sample_B_1_2.csv
+                ├── Sample_B_1_2.csv
     		└── ...
 	├── Sample_C_1
     		├── Sample_C_1_0.csv
     		├── Sample_C_1_1.csv
-        ├── Sample_C_1_2.csv
+                ├── Sample_C_1_2.csv
     		└── ...
 	├── Sample_A_1.csv
-  ├── Sample_B_1.csv
-  └── Sample_C_1.csv
+        ├── Sample_B_1.csv
+        └── Sample_C_1.csv
 ```
