@@ -28,14 +28,15 @@ $ conda activate scc
 ## Usage - sample data
 
 ```bash
-(scc) $ cd T-cell_and_glial_pathology_in_PD
-(scc) $ python scc.py --n 5 --input sample_data/ --output sample_data/out/ --order 1
+(scc) $ python scc.py --n 10 --input sample_data/ --output sample_data/out/ --order 1
 ```
 Parameter
 - [--n]: The number of CPU cores.
 - [--input]: Directory for both the enrichment matrices and adjacency matrices.
 - [--output]: Directory for output
 - [--order]: The order of adjacency matrices
+
+Due to technical limitations, the number of CPU cores is limited to the number of rows in the Enrichment matrices(`nrow`). Even if you input a number exceeding `nrow`, the command will be executed with  --n set to `nrow`.
 
 ## Data Format - input
 - Please ensure that the order of barcode names matches for both matrices.
