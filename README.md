@@ -74,7 +74,7 @@ Parameter
 |Type_Z_x_Type_Z|[-0.0661,...]|0.0075|0.0072,...]|0.37|
 
 ```bash
-[combo_name]  # The combination of two elements.
+[combo_name]  # The pairing of two elements' names.
 [local_scc]   # Local measurement of spatial cross-correlation.
 [global_scc]  # Global measurement of spatial cross-correlation.
 [permutation] # The outcome of conducting the permutation test one hundred times.
