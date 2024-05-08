@@ -41,7 +41,7 @@ Parameter
  
 * Increasing the number of CPUs beyond a certain point may result in diminishing returns or even performance degradation due to overhead, such as inter-process communication.
 
-* Due to current technical limitations, the number of CPU cores is limited to the number of rows in the Enrichment matrices(`nrow`). Even if you input a number exceeding `nrow`, the command will be executed with  --n set to `nrow`.
+* Due to current technical limitations, the number of CPU cores is limited to the number of rows in the Enrichment matrices(`nrow`). Even if you input a number exceeding `nrow`, the command will be executed with  [--n] set to `nrow`.
 
 ## Data Format - input
 - Please ensure that the order of barcode names matches for both matrices.
@@ -91,7 +91,6 @@ sample_data/
 - In the output path, the module will automatically generate a folder named according to [--order].
 ```bash
 
-
   sample_data/out/
 	        ├── 1
 	            ├── Sample_A_1
@@ -116,3 +115,11 @@ sample_data/
   		    ├── ...
 		    └── ...
 ```
+## Data Format - output
+
+| combo_name | local_scc | global_scc | permutation | p_val |
+| :----:| :----: | :----: |  :----: | :----: | 
+|Type_A_x_Type_A|[-0.0927,...]|-0.0166|[-0.019700294,...]|0.27|  
+|Type_A_x_Type_B|[0.4968,...]|0.03699|[0.012746631,..]|0.04|
+|...|...|...|...|...|
+|Type_Z_x_Type_Z|[-0.0661,...]|0.00754|0.007230769,..]|0.37|
