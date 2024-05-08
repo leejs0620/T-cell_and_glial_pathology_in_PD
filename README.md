@@ -16,15 +16,7 @@ Python: 3.6.13
 Numpy: 1.18.5
 Pandas: 1.1.5
 ```
-[The GPU-accelerated computing module is currently not shareable. We aim to upload it as soon as possible.]
 
-Optional requirements for GPU accelerated computing
-
--- Please ensure that your installation(NVIDIA driver, CUDA) is appropriate for your hardware and check if the GPUs are available.
-```bash
-CUDA: 11.1
-TensorFlow: 1.15.4
-```
 You can build the environment with Anaconda(or miniconda):
 ```bash
 $ conda create -n scc python==3.6.13
