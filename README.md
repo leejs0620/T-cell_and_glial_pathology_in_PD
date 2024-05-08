@@ -53,7 +53,7 @@ Parameter
 |  | AGTGTGGTCTATTGTG-1 | GCTATCGCGGCGCAAC-1 |  ... |Barcode n|
 | :----:| :----: | :----: |  :----: | :----: | 
 |AGTGTGGTCTATTGTG-1|0|1|...|0|  
-|AGTGTGGTCTATTGTG-1|0|0|...|1|
+|GCTATCGCGGCGCAAC-1|0|0|...|1|
 |...|...|...|...|...|
 |Barcode n|0|0|...|0|
 
