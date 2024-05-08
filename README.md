@@ -111,7 +111,7 @@ sample_data/
 ```bash
 
   sample_data/out/
-	        ├── 1 --> (order)
+	        ├── 1 
 	            ├── Sample_A_1
 	                ├── Sample_A_1_0.csv
 	                ├── Sample_A_1_1.csv
