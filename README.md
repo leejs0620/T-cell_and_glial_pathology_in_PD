@@ -26,7 +26,7 @@ $ conda activate scc
 ```
 
 ## Usage - sample data
-
+- This module skip the 
 ```bash
 (scc) $ python scc.py --input sample_data/ --output sample_data/out/ --order 1 --n 10
 ```
