@@ -28,15 +28,19 @@ $ conda activate scc
 ## Usage - sample data
 
 ```bash
-(scc) $ python scc.py --n 10 --input sample_data/ --output sample_data/out/ --order 1
+(scc) $ python scc.py --input sample_data/ --output sample_data/out/ --order 1 --n 10
 ```
 Parameter
-- [--n]: The number of CPU cores.
-- [--input]: Directory for both the enrichment matrices and adjacency matrices.
-- [--output]: Directory for output
-- [--order]: The order of adjacency matrices
+- [--input]  # Directory for both the enrichment matrices and adjacency matrices.
+- [--output] # Directory for output
+- [--order]  # The order of adjacency matrices
+- [--n]      # The number of CPU cores.
 
-Due to technical limitations, the number of CPU cores is limited to the number of rows in the Enrichment matrices(`nrow`). Even if you input a number exceeding `nrow`, the command will be executed with  --n set to `nrow`.
+* Using more CPUs does not guarantee a reduction in processing time.
+ 
+* Increasing the number of CPUs beyond a certain point may result in diminishing returns or even performance degradation due to overhead, such as inter-process communication.
+
+* Due to current technical limitations, the number of CPU cores is limited to the number of rows in the Enrichment matrices(`nrow`). Even if you input a number exceeding `nrow`, the command will be executed with  --n set to `nrow`.
 
 ## Data Format - input
 - Please ensure that the order of barcode names matches for both matrices.
