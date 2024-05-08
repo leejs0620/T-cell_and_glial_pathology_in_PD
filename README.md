@@ -4,7 +4,7 @@ Code and data for The spatial landscape of glial pathology and adaptive immune r
 # Spatial cross-correlation
 This is a Python module for spatial cross-correlation analyses
 
-<img src="ssc_image.png" width=500/>
+<img src="ssc_image.png" width=1000/>
 
 ## Installation
 ```bash
