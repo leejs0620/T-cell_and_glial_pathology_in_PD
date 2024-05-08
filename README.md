@@ -28,6 +28,7 @@ $ conda activate scc
 ## Usage - sample data
 
 ```bash
+(scc) $ cd T-cell_and_glial_pathology_in_PD
 (scc) $ python scc.py --n 5 --input sample_data/ --output sample_data/out/ --order 1
 ```
 Parameter
