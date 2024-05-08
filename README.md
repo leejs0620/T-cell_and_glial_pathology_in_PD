@@ -30,13 +30,14 @@ $ conda activate scc
 (scc) $ python scc.py --n 5 --input sample_data/ --output sample_data/out/ --order 1
 ```
 Parameter
-- [--n]: The number of CPU cores. (default: 2)
-- [--input]: Directory for both the enrichment matrices and adjacency matrices. (default: 'sample_data/')
-- [--output]: Directory for output (default: 'sample_data/out/')
-- [--order]: The order of adjacency matrices (default: 1)
+- [--n]: The number of CPU cores.
+- [--input]: Directory for both the enrichment matrices and adjacency matrices.
+- [--output]: Directory for output
+- [--order]: The order of adjacency matrices
 
 ## Data Format - input
 - Please ensure that the order of barcode names matches for both matrices.
+- Datasets are also expected to be prepared in a `csv` format.
 - Adjacency matrices for input should be
 
 |  | AGTGTGGTCTATTGTG-1 | GCTATCGCGGCGCAAC-1 |  ... |Barcode n|
@@ -79,7 +80,7 @@ sample_data/
 ## Data Directory - output
 
 - Each sample's folder contains distributed computation outputs, which will eventually be concatenated and saved in the designated output path.
-
+- The module will automatically create a folder named according to [--order] in the command.
 ```bash
 
 
