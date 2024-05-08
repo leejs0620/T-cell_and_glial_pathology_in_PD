@@ -80,7 +80,7 @@ sample_data/
 ## Data Directory - output
 
 - Each sample's folder contains distributed computation outputs, which will eventually be concatenated and saved in the designated output path.
-- The module will automatically create a folder named according to [--order] in the command.
+- In the output path, the module will automatically generate a folder named according to [--order].
 ```bash
 
 
