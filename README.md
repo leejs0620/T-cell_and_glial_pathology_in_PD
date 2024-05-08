@@ -37,7 +37,7 @@ Parameter
 
 ## Data Format - input
 - Please ensure that the order of barcode names matches for both matrices.
-- Datasets are also expected to be prepared in a `csv` format.
+- Datasets are expected to be prepared in a `csv` format.
 - Adjacency matrices for input should be
 
 |  | AGTGTGGTCTATTGTG-1 | GCTATCGCGGCGCAAC-1 |  ... |Barcode n|
