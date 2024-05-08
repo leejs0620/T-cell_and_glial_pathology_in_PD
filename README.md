@@ -64,6 +64,23 @@ Parameter
 |...|...|...|...|...|
 |Type_n|0.05631|0.06172|...|0.04630|
 
+## Data Format - output
+
+| combo_name | local_scc | global_scc | permutation | p_val |
+| :----:| :----: | :----: |  :----: | :----: | 
+|Type_A_x_Type_A|[-0.0927,...]|-0.0166|[-0.0197,...]|0.27|  
+|Type_A_x_Type_B|[0.4968,...]|0.0369|[0.0127,..]|0.04|
+|...|...|...|...|...|
+|Type_Z_x_Type_Z|[-0.0661,...]|0.0075|0.0072,...]|0.37|
+
+```bash
+[combo_name]  # The combination of two elements.
+[local_scc]   # Local measurement of spatial cross-correlation.
+[global_scc]  # Global measurement of spatial cross-correlation.
+[permutation] # The outcome of conducting the permutation test one hundred times.
+[p_val]       # P-value test.
+```
+
 ## Data Directory - input
 - Each sample should have matching names for both the enrichment matrices and adjacency matrices.
 - You can set the path for the input folder, but ensure that all enrichment matrices are located within the 'enrich' folder.
@@ -115,11 +132,3 @@ sample_data/
   		    ├── ...
 		    └── ...
 ```
-## Data Format - output
-
-| combo_name | local_scc | global_scc | permutation | p_val |
-| :----:| :----: | :----: |  :----: | :----: | 
-|Type_A_x_Type_A|[-0.0927,...]|-0.0166|[-0.0197,...]|0.27|  
-|Type_A_x_Type_B|[0.4968,...]|0.0369|[0.0127,..]|0.04|
-|...|...|...|...|...|
-|Type_Z_x_Type_Z|[-0.0661,...]|0.0075|0.0072,...]|0.37|
