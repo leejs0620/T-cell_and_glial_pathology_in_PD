@@ -307,7 +307,7 @@ for sn in sample_name:
         df_01 = pd.concat([df_01,df_02])
     isExist = os.path.exists(args.output + str(l) + '/' + sn + "_" + str(l) + '.csv')
     if isExist:
-        print("The Output for [" + sn + ", order: " + str(l) + "] saved as: [" + args.output + str(l) + '/' + sn + "_" + str(l) + '.csv]')
+        print("The Output for [" + sn + ", order: " + str(l) + "] already saved as: [" + args.output + str(l) + '/' + sn + "_" + str(l) + '.csv]')
     if not isExist:    
         df_01.to_csv(args.output + str(l) + '/' + sn + "_" + str(l) + '.csv',index = None)
         print("The Output for [" + sn + ", order: " + str(l) + "] saved as: [" + args.output + str(l) + '/' + sn + "_" + str(l) + '.csv]')
