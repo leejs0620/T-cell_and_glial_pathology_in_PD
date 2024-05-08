@@ -31,11 +31,12 @@ $ conda activate scc
 (scc) $ python scc.py --input sample_data/ --output sample_data/out/ --order 1 --n 10
 ```
 Parameter
+```bash
 - [--input]  # Directory for both the enrichment matrices and adjacency matrices.
 - [--output] # Directory for output
 - [--order]  # The order of adjacency matrices
 - [--n]      # The number of CPU cores.
-
+```
 * Using more CPUs does not guarantee a reduction in processing time.
  
 * Increasing the number of CPUs beyond a certain point may result in diminishing returns or even performance degradation due to overhead, such as inter-process communication.
