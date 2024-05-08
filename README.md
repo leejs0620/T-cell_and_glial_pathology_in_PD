@@ -30,12 +30,13 @@ $ conda activate scc
 (scc) $ python scc.py --n 5 --input sample_data/ --output sample_data/out/ --order 1
 ```
 Parameter
-- [--n]: The number of CPU cores.
-- [--input]: Directory for both the enrichment matrices and adjacency matrices.
-- [--output]: Directory for output
-- [--order]: The order of adjacency matrices
+- [--n]: The number of CPU cores. (default: 2)
+- [--input]: Directory for both the enrichment matrices and adjacency matrices. (default: 'sample_data/')
+- [--output]: Directory for output (default: 'sample_data/out/')
+- [--order]: The order of adjacency matrices (default: 1)
 
 ## Data Format - input
+- Please ensure that the order of barcode names matches for both matrices.
 - Adjacency matrices for input should be
 
 |  | AGTGTGGTCTATTGTG-1 | GCTATCGCGGCGCAAC-1 |  ... |Barcode n|
