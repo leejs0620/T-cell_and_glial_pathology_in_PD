@@ -32,10 +32,10 @@ $ conda activate scc
 ```
 Parameter
 ```bash
-- [--input]  # Directory for both the enrichment matrices and adjacency matrices.
-- [--output] # Directory for output
-- [--order]  # The order of adjacency matrices
-- [--n]      # The number of CPU cores.
+[--input]  # Directory for both the enrichment matrices and adjacency matrices.
+[--output] # Directory for output
+[--order]  # The order of adjacency matrices
+[--n]      # The number of CPU cores.
 ```
 * Using more CPUs does not guarantee a reduction in processing time.
  
