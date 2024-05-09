@@ -137,4 +137,5 @@ sample_data/
 		    └── ...
 ```
 ## Reference
-Chen Y (2015) A New Methodology of Spatial Cross-Correlation Analysis. PLoS ONE 10(5): e0126158. [doi:10.1371/journal.pone.0126158](https://doi.org/10.1371/journal.pone.0126158)
+- Chen Y. (2015) A New Methodology of Spatial Cross-Correlation Analysis. PLoS ONE 10(5): e0126158. [doi:10.1371/journal.pone.0126158](https://doi.org/10.1371/journal.pone.0126158)
+- Jakubiak K. et al. (2024) The spatial landscape of glial pathology and T-cell response in Parkinson’s disease substantia nigra. bioRxiv 2024.01.08.574736; doi: https://doi.org/10.1101/2024.01.08.574736
